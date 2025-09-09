@@ -57,16 +57,16 @@ Download the project files to your local machine:
 Install dependencies
 Navigate into the project directory and install the required packages:
 
-<pre> ```bash
+```bash
 cd dashboard-mailbox-interface
 npm install
-``` </pre>
+```
 
 
 Run the development server
 Start the local development server:
 
-<pre> ```bash npm run dev ``` </pre>
+```bash npm run dev ```
 
 
 This will open the application in your browser, starting with the Login Page.
@@ -78,9 +78,9 @@ You can log in with one of the following test users:
 
 ***Email: anna.smith@example.com, Password: password***
 
-Once logged in, you’ll be redirected to the Dashboard Mailbox where you can:
+Once logged in, you’ll be redirected to the Dashboard Mailbox, where you can:
 
-- View emails in Inbox and Sent.
+- View emails in the Inbox and Sent.
 
 - Select, delete, and mark emails as read.
 
