@@ -52,7 +52,9 @@ _This project will eventually be deployed on GitHub Pages for easy access withou
 Clone the project
 Download the project files to your local machine:
 
-```bash git clone https://github.com/Maha-Magdy/dashboard-mailbox-interface.git ```
+```bash 
+git clone https://github.com/Maha-Magdy/dashboard-mailbox-interface.git
+```
 
 Install dependencies
 Navigate into the project directory and install the required packages:
