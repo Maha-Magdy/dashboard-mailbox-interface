@@ -51,7 +51,7 @@ export const mockEmails: Email[] = [
         sentAt: '2025-09-03T10:00:00Z',
         category: 'documents',
         hasAttachment: true,
-        isRead: true,
+        isRead: false,
     },
     {
         id: '6',
@@ -72,7 +72,7 @@ export const mockEmails: Email[] = [
         sentAt: '2025-08-15T10:00:00Z',
         category: 'clients',
         hasAttachment: false,
-        isRead: true,
+        isRead: false,
     },
     {
         id: '8',
@@ -93,7 +93,7 @@ export const mockEmails: Email[] = [
         body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         sentAt: '2025-07-28T10:00:00Z',
         hasAttachment: false,
-        isRead: true,
+        isRead: false,
     },
     {
         id: '10',
@@ -134,7 +134,7 @@ export const mockEmails: Email[] = [
         sentAt: '2025-09-04T10:00:00Z',
         category: 'clients',
         hasAttachment: false,
-        isRead: true,
+        isRead: false,
     },
     {
         id: '14',

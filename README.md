@@ -1,13 +1,3 @@
-## Icons
-I created a small library to serve as the single source of truth for icons. This helps us avoid using different icons or inconsistent methods whenever an icon is needed.
-
-### instruction to add icon, and use it
-1. Add the SVG path of the icon to the icons/icons.ts file as a new object in the icons array. Be sure to include its name and viewBox.
-
-2. To use the icons, `run npm run generate-icons` in the terminal after every change to the icons file. Alternatively, you can keep the watcher running with `npm run watch-icons` while working.
-
-3. Use the icon across the application by calling it as a component. The component name will follow this format: iconName + Icon (e.g., DashboardIcon).
-
 <a name="dashboard-mailbox-interface"></a>
 
 # Dashboard Mailbox Interface
@@ -19,6 +9,7 @@ I created a small library to serve as the single source of truth for icons. This
 **Mailbox Interface** is a key feature within the dashboard, designed to streamline internal communication. It allows users to receive emails directly in their inbox, compose and send messages to colleagues, view email content, delete messages, and mark emails as read. This feature integrates seamlessly with the dashboard, providing an intuitive and efficient way for users to manage their communications within the organization.
 
 ![screenshot](./app_screenshot_1.png)
+
 ![screenshot](./app_screenshot_2.png)
 
 ## Table of contents
@@ -28,10 +19,10 @@ I created a small library to serve as the single source of truth for icons. This
   - [Table of contents](#table-of-contents)
   - [Features](#features)
   - [Getting Started](#getting-started)
+  - [🎨 Dynamic Icon Library](#-dynamic-icon-library)
+    - [How It Works](#how-it-works)
   - [Demo](#demo)
-  - [Examples](#examples)
   - [Contributing](#contributing)
-  - [Acknowledgments](#acknowledgments)
   - [License](#license)
   - [Show your support](#show-your-support)
 
@@ -51,85 +42,91 @@ Users can create and send new emails through the Compose feature. It can be acce
 Users can open and read individual emails in detail. The View Email page displays the email subject, sender and recipient information, and the full body of the message. From this view, users can also delete the email or mark it as read, ensuring better inbox management.
 
 * **Email Management Actions**
-The mailbox includes essential tools for managing emails efficiently. Users can delete emails, mark unread emails as read,
-
+The mailbox includes essential tools for managing emails efficiently. Users can delete emails, mark unread emails as read.
 
 <a name="getting_started"></a>
 
+## Getting Started
 
-## Getting Started 
+_This project will eventually be deployed on GitHub Pages for easy access without setup._ However, since the repository is currently private, you can run it locally by following these steps:
 
-To get start with WYSIWYG Editor, This guide will help you quickly set up and use it. It's a React component that relies on the Draft.js library for its core editing features.
+Clone the project
+Download the project files to your local machine:
 
-1. Quick Start
-To get a feel for the editor and explore the provided examples:
-- **Clone the project**: Download the project files to your local machine.
-- **Install dependencies**: Navigate to the project directory in your terminal and run `npm install`. This command installs all the necessary Node.js modules.
-- **Run the development server**: After installation, execute npm dev to start a local server. You can then open your browser and test the examples provided in the **app.tsx** file.
+<pre> ```bash git clone https://github.com/Maha-Magdy/dashboard-mailbox-interface.git ``` </pre>
 
-2. Using it in Your Own Project
-To integrate the WYSIWYG Editor into your existing project:
-- **Copy the component**: Simply copy the wysiwyg-editor folder from the components directory into your project.
-- **Integrate and use**: Refer to the examples provided in the project for guidance on how to use the component in your own application.
+Install dependencies
+Navigate into the project directory and install the required packages:
+
+<pre> ```bash
+cd dashboard-mailbox-interface
+npm install
+``` </pre>
+
+
+Run the development server
+Start the local development server:
+
+<pre> ```bash npm run dev ``` </pre>
+
+
+This will open the application in your browser, starting with the Login Page.
+
+Login Credentials
+You can log in with one of the following test users:
+
+***Email: jane.smith@example.com, Password: password***
+
+***Email: anna.smith@example.com, Password: password***
+
+Once logged in, you’ll be redirected to the Dashboard Mailbox where you can:
+
+- View emails in Inbox and Sent.
+
+- Select, delete, and mark emails as read.
+
+- Open and read individual messages.
+
+- Compose and send emails.
+
+- Send an email from Jane to Anna (or vice versa), then log in as the other user to see the message appear in their inbox.
+
+<a name="dynamic-icon-library"></a>
+
+## 🎨 Dynamic Icon Library
+
+One of the most interesting and reusable features of this project is the **custom icon library** I built. It serves as a **single source of truth for all SVG icons** in the application, allowing consistent and dynamic usage throughout the dashboard. This library lets you **add, generate, and use icons freely** in a streamlined and scalable way.
+
+### How It Works
+
+1. **Add an Icon**  
+   - Place the SVG path of the new icon in `icons/icons.ts` as a new object in the `icons` array.  
+   - Make sure to include the **name** and **viewBox** of the icon.
+
+2. **Generate or Watch Icons**  
+   - Run the generator after every update:  
+     ```bash
+     npm run generate-icons
+     ```  
+   - Or keep the watcher running during development for automatic updates:  
+     ```bash
+     npm run watch-icons
+     ```  
+
+3. **Use Icons Across the App**  
+   - Icons can be called as components dynamically anywhere in the application.  
+   - Component names follow the pattern: `iconName + Icon` (e.g., `DashboardIcon`).
+
+This approach ensures **consistency, scalability, and reusability** for all icon needs in the project, making the UI cohesive and easy to maintain.
 
 <a name="demo"></a>
 
 ## Demo
 
-Here is the link to the live demo of the WYSIWYG Editor:
+Here is the link to the video demo of the Dashboard Mailbox Interface:
 
-- [Live Demo Link](https://maha-magdy.github.io/wysiwyg-editor/)
+- [Video Demo Link](https://www.loom.com/share/d74580279451417a932bd84df1d0ab49?sid=922fa814-33cc-41a3-8a14-7cc13d37f087)
 
-<a name="props_reference"></a>
-``` 
-interface WysiwygEditorProps {
-    /**
-     * In controlled mode, the RawDraftContentState value to display.
-     * When provided, the editor operates as a controlled component.
-     */
-    value?: RawDraftContentState;
-    /**
-     * Callback function triggered on content change, providing the updated RawDraftContentState.
-     * Required for controlled mode.
-     */
-    callback?: (content: RawDraftContentState) => void;
-    /**
-     * Optional CSS class name for the editor container.
-     */
-    className?: string;
-    /**
-     * Optional inline CSS style for the editor container.
-     */
-    style?: React.CSSProperties;
-    /**
-     * API endpoint for content persistence (e.g., loading initial content, and save it after edit it).
-     * This prop enables an internal mechanism for fetching/saving content.
-     */
-    contentApi?: string;
-    /**
-     * Callback function executed upon successful content save via `contentApi`.
-     */
-    onSaveSuccess?: () => void;
-    /**
-     * Callback function executed upon content save error via `contentApi`.
-     * Provides the error object.
-     */
-    onSaveError?: (error: unknown) => void;
-    /**
-     * [CONCEPTUAL] An array of strings defining which toolbar options should be displayed.
-     * Example: `['bold', 'italic', 'ul', 'ol', 'link']`.
-     * You would need to implement the logic within the WysiwygEditor component to
-     * render toolbar buttons based on this prop.
-     */
-    toolbarOptions?: string[];
-}
-``` 
-
-<a name="examples"></a>
-
-## Examples
-
-For examples, see the <a href='./src/App.tsx'>**app.tsx**</a> file.
 
 <a name="contributing"></a>
 
@@ -137,13 +134,7 @@ For examples, see the <a href='./src/App.tsx'>**app.tsx**</a> file.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Maha-Magdy/wysiwyg-editor/issues).
-
-<a name="acknowledgments"></a>
-
-## Acknowledgments
-
-- This WYSIWYG editor leverages the <a href="https://draftjs.org/">Draft.js</a> library.
+Feel free to check the [issues page](https://github.com/Maha-Magdy/dashboard-mailbox-interface/issues).
 
 <a name="license"></a>
 
