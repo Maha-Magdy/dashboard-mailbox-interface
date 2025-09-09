@@ -21,6 +21,7 @@
   - [Getting Started](#getting-started)
   - [🎨 Dynamic Icon Library](#-dynamic-icon-library)
     - [How It Works](#how-it-works)
+  - [Test Coverage](#test-coverage)
   - [Demo](#demo)
   - [Contributing](#contributing)
   - [License](#license)
@@ -91,7 +92,7 @@ Once logged in, you’ll be redirected to the Dashboard Mailbox where you can:
 
 - Send an email from Jane to Anna (or vice versa), then log in as the other user to see the message appear in their inbox.
 
-<a name="dynamic-icon-library"></a>
+<a name="dynamic_icon_library"></a>
 
 ## 🎨 Dynamic Icon Library
 
@@ -118,6 +119,22 @@ One of the most interesting and reusable features of this project is the **custo
    - Component names follow the pattern: `iconName + Icon` (e.g., `DashboardIcon`).
 
 This approach ensures **consistency, scalability, and reusability** for all icon needs in the project, making the UI cohesive and easy to maintain.
+
+<a name="test_coverage"></a>
+
+## Test Coverage
+
+I have written unit tests to cover the main features of the application, focusing on:
+
+- **Login**: Ensures the login page works correctly with mock credentials and redirects the user appropriately.
+
+- **Mailbox**: Tests core mailbox functionalities including viewing emails, marking them as read, and deleting emails.  
+
+These tests help ensure the critical parts of the application remain stable and function as expected.
+
+![screenshot](./test_coverage_1.png)
+
+![screenshot](./test_coverage_2.png)
 
 <a name="demo"></a>
 
