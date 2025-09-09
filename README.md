@@ -68,7 +68,9 @@ npm install
 Run the development server
 Start the local development server:
 
-```bash npm run dev ```
+```bash 
+npm run dev
+```
 
 
 This will open the application in your browser, starting with the Login Page.
