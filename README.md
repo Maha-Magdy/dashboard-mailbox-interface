@@ -1,5 +1,4 @@
 <a name="dashboard-mailbox-interface"></a>
-
 # Dashboard Mailbox Interface
 
 <a name="about"></a>
